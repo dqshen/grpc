@@ -1,16 +1,20 @@
-package net.techtter.server;
+package com.dqs.server;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import net.techtter.service.UserService;
+import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+
+import com.dqs.service.UserService;
 
 public class GRPCServer {
 
     public static void main(String args[]) throws IOException, InterruptedException {
 
-        Server server = ServerBuilder.forPort(9091).addService(new UserService()).build();
+        Server server = NettyServerBuilder.forAddress(new InetSocketAddress("192.168.50.125", 9091)).addService(new UserService()).build();
 
         server.start();
 

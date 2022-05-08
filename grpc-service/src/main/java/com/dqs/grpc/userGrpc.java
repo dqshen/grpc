@@ -1,4 +1,4 @@
-package net.techtter.grpc;
+package com.dqs.grpc;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -27,30 +27,30 @@ public final class userGrpc {
   public static final String SERVICE_NAME = "user";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<net.techtter.grpc.User.LoginRequest,
-      net.techtter.grpc.User.APIResponse> getLoginMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dqs.grpc.User.LoginRequest,
+      com.dqs.grpc.User.APIResponse> getLoginMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "login",
-      requestType = net.techtter.grpc.User.LoginRequest.class,
-      responseType = net.techtter.grpc.User.APIResponse.class,
+      requestType = com.dqs.grpc.User.LoginRequest.class,
+      responseType = com.dqs.grpc.User.APIResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<net.techtter.grpc.User.LoginRequest,
-      net.techtter.grpc.User.APIResponse> getLoginMethod() {
-    io.grpc.MethodDescriptor<net.techtter.grpc.User.LoginRequest, net.techtter.grpc.User.APIResponse> getLoginMethod;
+  public static io.grpc.MethodDescriptor<com.dqs.grpc.User.LoginRequest,
+      com.dqs.grpc.User.APIResponse> getLoginMethod() {
+    io.grpc.MethodDescriptor<com.dqs.grpc.User.LoginRequest, com.dqs.grpc.User.APIResponse> getLoginMethod;
     if ((getLoginMethod = userGrpc.getLoginMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getLoginMethod = userGrpc.getLoginMethod) == null) {
           userGrpc.getLoginMethod = getLoginMethod = 
-              io.grpc.MethodDescriptor.<net.techtter.grpc.User.LoginRequest, net.techtter.grpc.User.APIResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.dqs.grpc.User.LoginRequest, com.dqs.grpc.User.APIResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "user", "login"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  net.techtter.grpc.User.LoginRequest.getDefaultInstance()))
+                  com.dqs.grpc.User.LoginRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  net.techtter.grpc.User.APIResponse.getDefaultInstance()))
+                  com.dqs.grpc.User.APIResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new userMethodDescriptorSupplier("login"))
                   .build();
           }
@@ -59,30 +59,30 @@ public final class userGrpc {
      return getLoginMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<net.techtter.grpc.User.Empty,
-      net.techtter.grpc.User.APIResponse> getLogoutMethod;
+  private static volatile io.grpc.MethodDescriptor<com.dqs.grpc.User.Empty,
+      com.dqs.grpc.User.APIResponse> getLogoutMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "logout",
-      requestType = net.techtter.grpc.User.Empty.class,
-      responseType = net.techtter.grpc.User.APIResponse.class,
+      requestType = com.dqs.grpc.User.Empty.class,
+      responseType = com.dqs.grpc.User.APIResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<net.techtter.grpc.User.Empty,
-      net.techtter.grpc.User.APIResponse> getLogoutMethod() {
-    io.grpc.MethodDescriptor<net.techtter.grpc.User.Empty, net.techtter.grpc.User.APIResponse> getLogoutMethod;
+  public static io.grpc.MethodDescriptor<com.dqs.grpc.User.Empty,
+      com.dqs.grpc.User.APIResponse> getLogoutMethod() {
+    io.grpc.MethodDescriptor<com.dqs.grpc.User.Empty, com.dqs.grpc.User.APIResponse> getLogoutMethod;
     if ((getLogoutMethod = userGrpc.getLogoutMethod) == null) {
       synchronized (userGrpc.class) {
         if ((getLogoutMethod = userGrpc.getLogoutMethod) == null) {
           userGrpc.getLogoutMethod = getLogoutMethod = 
-              io.grpc.MethodDescriptor.<net.techtter.grpc.User.Empty, net.techtter.grpc.User.APIResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.dqs.grpc.User.Empty, com.dqs.grpc.User.APIResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "user", "logout"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  net.techtter.grpc.User.Empty.getDefaultInstance()))
+                  com.dqs.grpc.User.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  net.techtter.grpc.User.APIResponse.getDefaultInstance()))
+                  com.dqs.grpc.User.APIResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new userMethodDescriptorSupplier("logout"))
                   .build();
           }
@@ -120,15 +120,15 @@ public final class userGrpc {
 
     /**
      */
-    public void login(net.techtter.grpc.User.LoginRequest request,
-        io.grpc.stub.StreamObserver<net.techtter.grpc.User.APIResponse> responseObserver) {
+    public void login(com.dqs.grpc.User.LoginRequest request,
+        io.grpc.stub.StreamObserver<com.dqs.grpc.User.APIResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
     }
 
     /**
      */
-    public void logout(net.techtter.grpc.User.Empty request,
-        io.grpc.stub.StreamObserver<net.techtter.grpc.User.APIResponse> responseObserver) {
+    public void logout(com.dqs.grpc.User.Empty request,
+        io.grpc.stub.StreamObserver<com.dqs.grpc.User.APIResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getLogoutMethod(), responseObserver);
     }
 
@@ -138,15 +138,15 @@ public final class userGrpc {
             getLoginMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                net.techtter.grpc.User.LoginRequest,
-                net.techtter.grpc.User.APIResponse>(
+                com.dqs.grpc.User.LoginRequest,
+                com.dqs.grpc.User.APIResponse>(
                   this, METHODID_LOGIN)))
           .addMethod(
             getLogoutMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                net.techtter.grpc.User.Empty,
-                net.techtter.grpc.User.APIResponse>(
+                com.dqs.grpc.User.Empty,
+                com.dqs.grpc.User.APIResponse>(
                   this, METHODID_LOGOUT)))
           .build();
     }
@@ -172,16 +172,16 @@ public final class userGrpc {
 
     /**
      */
-    public void login(net.techtter.grpc.User.LoginRequest request,
-        io.grpc.stub.StreamObserver<net.techtter.grpc.User.APIResponse> responseObserver) {
+    public void login(com.dqs.grpc.User.LoginRequest request,
+        io.grpc.stub.StreamObserver<com.dqs.grpc.User.APIResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void logout(net.techtter.grpc.User.Empty request,
-        io.grpc.stub.StreamObserver<net.techtter.grpc.User.APIResponse> responseObserver) {
+    public void logout(com.dqs.grpc.User.Empty request,
+        io.grpc.stub.StreamObserver<com.dqs.grpc.User.APIResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getLogoutMethod(), getCallOptions()), request, responseObserver);
     }
@@ -207,14 +207,14 @@ public final class userGrpc {
 
     /**
      */
-    public net.techtter.grpc.User.APIResponse login(net.techtter.grpc.User.LoginRequest request) {
+    public com.dqs.grpc.User.APIResponse login(com.dqs.grpc.User.LoginRequest request) {
       return blockingUnaryCall(
           getChannel(), getLoginMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public net.techtter.grpc.User.APIResponse logout(net.techtter.grpc.User.Empty request) {
+    public com.dqs.grpc.User.APIResponse logout(com.dqs.grpc.User.Empty request) {
       return blockingUnaryCall(
           getChannel(), getLogoutMethod(), getCallOptions(), request);
     }
@@ -240,16 +240,16 @@ public final class userGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<net.techtter.grpc.User.APIResponse> login(
-        net.techtter.grpc.User.LoginRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dqs.grpc.User.APIResponse> login(
+        com.dqs.grpc.User.LoginRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getLoginMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<net.techtter.grpc.User.APIResponse> logout(
-        net.techtter.grpc.User.Empty request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.dqs.grpc.User.APIResponse> logout(
+        com.dqs.grpc.User.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getLogoutMethod(), getCallOptions()), request);
     }
@@ -276,12 +276,12 @@ public final class userGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_LOGIN:
-          serviceImpl.login((net.techtter.grpc.User.LoginRequest) request,
-              (io.grpc.stub.StreamObserver<net.techtter.grpc.User.APIResponse>) responseObserver);
+          serviceImpl.login((com.dqs.grpc.User.LoginRequest) request,
+              (io.grpc.stub.StreamObserver<com.dqs.grpc.User.APIResponse>) responseObserver);
           break;
         case METHODID_LOGOUT:
-          serviceImpl.logout((net.techtter.grpc.User.Empty) request,
-              (io.grpc.stub.StreamObserver<net.techtter.grpc.User.APIResponse>) responseObserver);
+          serviceImpl.logout((com.dqs.grpc.User.Empty) request,
+              (io.grpc.stub.StreamObserver<com.dqs.grpc.User.APIResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -305,7 +305,7 @@ public final class userGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return net.techtter.grpc.User.getDescriptor();
+      return com.dqs.grpc.User.getDescriptor();
     }
 
     @java.lang.Override

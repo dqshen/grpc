@@ -1,21 +1,23 @@
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import net.techtter.grpc.User;
-import net.techtter.grpc.userGrpc;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 
-import static net.techtter.grpc.userGrpc.newBlockingStub;
+import com.dqs.grpc.User;
+import com.dqs.grpc.userGrpc;
 
-public class GRPCClient {
+import static com.dqs.grpc.userGrpc.newBlockingStub;
+
+public class gRPCClient {
 
  public static void main(String[] args){
-
-     ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9091).usePlaintext().build();
+     
+     ManagedChannel channel =  ManagedChannelBuilder.forAddress("192.168.50.125", 9091).usePlaintext().build();
 
      //stub from proto file
 
      userGrpc.userBlockingStub stub =  userGrpc.newBlockingStub(channel);
 
-     User.LoginRequest request = User.LoginRequest.newBuilder().setUsername("Hello").setPassword("Helrrlo").build();
+     User.LoginRequest request = User.LoginRequest.newBuilder().setUsername("Hello").setPassword("Hello").build();
 
      User.APIResponse response = stub.login(request);
 

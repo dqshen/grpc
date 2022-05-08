@@ -1,8 +1,9 @@
-package net.techtter.service;
+package com.dqs.service;
+
+import com.dqs.grpc.User;
+import com.dqs.grpc.userGrpc;
 
 import io.grpc.stub.StreamObserver;
-import net.techtter.grpc.User;
-import net.techtter.grpc.userGrpc;
 
 public class UserService extends userGrpc.userImplBase {
     @Override
