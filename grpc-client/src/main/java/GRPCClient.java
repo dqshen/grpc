@@ -9,20 +9,29 @@ import static com.dqs.grpc.userGrpc.newBlockingStub;
 
 public class gRPCClient {
 
- public static void main(String[] args){
-     
-     ManagedChannel channel =  ManagedChannelBuilder.forAddress("192.168.50.125", 9091).usePlaintext().build();
+    public static void main(String[] args) throws InterruptedException {
 
-     //stub from proto file
+        // https://www.rfc-editor.org/rfc/rfc7540#section-3.5
+        // 连接起始报文：0x505249202a20485454502f322e300d0a0d0a534d0d0a0d0a
 
-     userGrpc.userBlockingStub stub =  userGrpc.newBlockingStub(channel);
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("192.168.8.128", 9091).usePlaintext().build();
 
-     User.LoginRequest request = User.LoginRequest.newBuilder().setUsername("Hello").setPassword("Hello").build();
+        // stub from proto file
 
-     User.APIResponse response = stub.login(request);
+        userGrpc.userBlockingStub stub = userGrpc.newBlockingStub(channel);
 
-     System.out.println("Response : "+ response.getResponseMessage());
+        while (true) {
 
- }
+            Thread.sleep(3000);
+
+            User.LoginRequest request = User.LoginRequest.newBuilder().setUsername("Hello").setPassword("Hello")
+                    .build();
+
+            User.APIResponse response = stub.login(request);
+
+            System.out.println("Response : " + response.getResponseMessage());
+        }
+
+    }
 
 }

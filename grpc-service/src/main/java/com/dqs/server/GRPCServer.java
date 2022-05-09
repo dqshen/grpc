@@ -14,7 +14,7 @@ public class GRPCServer {
 
     public static void main(String args[]) throws IOException, InterruptedException {
 
-        Server server = NettyServerBuilder.forAddress(new InetSocketAddress("192.168.50.125", 9091)).addService(new UserService()).build();
+        Server server = NettyServerBuilder.forAddress(new InetSocketAddress("192.168.8.128", 9091)).addService(new UserService()).build();
 
         server.start();
 
